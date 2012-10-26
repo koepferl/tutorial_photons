@@ -45,4 +45,4 @@ m.set_n_photons(initial=1e6, imaging=1e7,
                 raytracing_sources=1e6, raytracing_dust=0)
 
 # Write out input file
-m.write('tutorial_model.rtin')
+m.write('tutorial_model_noray_dust.rtin')
