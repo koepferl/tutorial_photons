@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from hyperion.model import ModelOutput
 from hyperion.util.constants import pc
 
-for f in ['', '_noimaging', '_noray_dust']:
+for f in ['', '_noimaging', '_noray_dust', '_noray_sour']:
 
     m = ModelOutput('tutorial_model' + f + '.rtout')
 
