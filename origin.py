@@ -11,27 +11,28 @@ for f in ['', '_noimaging', '_noray_dust', '_noray_sour']:
 
     fig = plt.figure()
     ax = fig.add_subplot(1, 1, 1)
+    ax.titel(f)
 
     # Direct stellar photons
     if f in ['', '_noimaging', '_noray_dust']:
         wav, nufnu = m.get_sed(inclination=0, aperture=-1, distance=300 * pc,
                        component='source_emit')
-        ax.loglog(wav, nufnu, color='blue')
+        ax.loglog(wav, nufnu, color='blue', label='Direct stellar photons')
 
     # Scattered stellar photons
     wav, nufnu = m.get_sed(inclination=0, aperture=-1, distance=300 * pc,
                        component='source_scat')
-    ax.loglog(wav, nufnu, color='teal')
+    ax.loglog(wav, nufnu, color='teal', label='Scattered stellar photons')
 
     # Direct dust photons
     wav, nufnu = m.get_sed(inclination=0, aperture=-1, distance=300 * pc,
                        component='dust_emit')
-    ax.loglog(wav, nufnu, color='red')
+    ax.loglog(wav, nufnu, color='red', label='Direct dust photons')
 
     # Scattered dust photons
     wav, nufnu = m.get_sed(inclination=0, aperture=-1, distance=300 * pc,
                        component='dust_scat')
-    ax.loglog(wav, nufnu, color='orange')
+    ax.loglog(wav, nufnu, color='orange', label='Scattered dust photons')
 
     ax.set_xlabel(r'$\lambda$ [$\mu$m]')
     ax.set_ylabel(r'$\lambda F_\lambda$ [ergs/s/cm$^2$]')
