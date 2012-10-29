@@ -10,8 +10,9 @@ for f in ['', '_noimaging', '_noray_dust', '_noray_sour']:
     m = ModelOutput('tutorial_model' + f + '.rtout')
 
     fig = plt.figure()
+    plt.title((f))
     ax = fig.add_subplot(1, 1, 1)
-    ax.titel(f)
+    
 
     # Direct stellar photons
     if f in ['', '_noimaging', '_noray_dust']:
