@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from hyperion.model import ModelOutput
 from hyperion.util.constants import pc
 
-for f in ['', '_noimaging', '_noray_dust', '_noray_sour']:
+for f in ['', '_noimaging', '_noray_dust', '_noray_sour', '_fewinitials']:
     print f
     m = ModelOutput('tutorial_model' + f + '.rtout')
 
@@ -15,7 +15,7 @@ for f in ['', '_noimaging', '_noray_dust', '_noray_sour']:
     
 
     # Direct stellar photons
-    if f in ['', '_noimaging', '_noray_dust']:
+    if f in ['', '_noimaging', '_noray_dust', '_fewinitials']:
         wav, nufnu = m.get_sed(inclination='all', aperture=-1, distance=300 * pc,
                        component='source_emit')
 
